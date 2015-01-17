@@ -27,6 +27,17 @@ angular.module('shortly', [
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
     })
+    .when('/logout', {
+      // controller: 'AuthController',
+      // redirectTo: function(rtParam, locationPath, locationSearch){
+      //   console.log('\nlogout firing\n');
+      //   auth.signout();
+      //   return '/signin';
+
+      // }
+      redirectTo: '/signin'
+    })
+    .otherwise({redirectTo: '/links'})
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttachTokens');

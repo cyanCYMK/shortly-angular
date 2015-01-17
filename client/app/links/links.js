@@ -3,13 +3,15 @@
 
 .controller('LinksController', function ($scope, Links, $location) {
   // Your code here
-  $scope.data = {};
+  $scope.links = [];
   $scope.getLinks = function(){
     console.log('\ngetLinks fired\n');
     Links.links('GET')
       .success(function(data, status, headers, config){
-        console.log('links get success:', data);
-        $scope.data.links = data;
+        $scope.links = data;
+        console.log('\nlinks get success');
+        console.log('$scope.links:', $scope.links);
+
       })
       .error(function(){
         console.log('link get error')
