@@ -1,6 +1,6 @@
 <div id='container' ng-controller='ShortenController'>
 <!-- Your code here -->
-  <form name="shortenUrl" ng-submit='addLink()'>
+  <form name="shortenUrl" ng-submit='addLink()' novalidate>
     <input type='url' placeholder='enter url here' name='input' ng-model='link.url' required />
     <button ng-click='submitted=true'>Shorten!</button><br />
     <!-- <div ng-class="{true: 'error'}[submitted && shortenUrl.input.$invalid]"> -->
@@ -9,7 +9,7 @@
     <!-- </div> -->
   </form>
 
-  <pre>link.url = <span ng-bind='link.url'</span></pre>
+  <!-- <pre>link.url = <span ng-bind='link.url'</span></pre> -->
 
 </div>
 

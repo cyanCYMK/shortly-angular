@@ -50,7 +50,9 @@ angular.module('shortly.services', [])
   };
 
   var signout = function () {
+    console.log("Signing out ...");
     $window.localStorage.removeItem('com.shortly');
+    console.log("Local storage = ", $window.localStorage.getItem('com.shortly'));
     $location.path('/signin');
   };
 
